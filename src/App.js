@@ -1,16 +1,15 @@
-import React from 'react';
-import "./App.css"
+import React,{ useState } from 'react';
+import "./App.css";
 
 function App() {
-  let count = 0;
+  const [count,setCount] = useState(0);
   return (
     <div className='container'>
       <h1>Use State</h1>
-      <h3>Counter : <span id="counter">{count}</span></h3>
+      <h3>Counter : {count}</h3>
       <button type="button" onClick={() =>{
-       count++;
-       document.getElementById("counter").innerText=count;
-       console.log(count);
+       setCount(count + 1);
+        console.log(count);
       }}>
         Increase
       </button>
